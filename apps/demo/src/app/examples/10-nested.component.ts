@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { DragulaService } from "ng2-dragula";
+import { DragulaService } from "@xmagic/ngx-dragula";
 import { Subscription } from "rxjs";
 
 const nestedExampleCode = `

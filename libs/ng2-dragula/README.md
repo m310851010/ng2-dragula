@@ -1,3 +1,5 @@
+> Forked from ng2-dragula 16.x branch, it supports Angular 13.
+
 Official **Angular** wrapper for [`dragula`](https://github.com/bevacqua/dragula).
 
 [![npm version](https://badge.fury.io/js/ng2-dragula.svg)](http://badge.fury.io/js/ng2-dragula) [![npm downloads](https://img.shields.io/npm/dm/ng2-dragula.svg)](https://npmjs.org/ng2-dragula)
@@ -36,19 +38,18 @@ Try out the [demo](http://valor-software.github.io/ng2-dragula/index.html)!
 
 Latest version available for each version of Angular
 
-| ng2-dragula | Angular |
+| @xmagic/ngx-dragula | Angular |
 | ---------- |---------|
-| 2.1.1      | <= 9.x  |
-| current    | 16.x.x  |
+| 13.x    | 13.x.x  |
 
 # Install
 
 You can get it on npm.
 
 ```sh
-npm install ng2-dragula
+npm install @xmagic/ngx-dragula
 # or
-yarn add ng2-dragula
+yarn add @xmagic/ngx-dragula
 ```
 
 # Setup
@@ -66,7 +67,7 @@ dragula still relies on `global`.
 ### 2. Add `DragulaModule.forRoot()` to your application module.
 
 ```typescript
-import { DragulaModule } from 'ng2-dragula';
+import { DragulaModule } from '@xmagic/ngx-dragula';
 @NgModule({
   imports: [
     ...,
@@ -232,7 +233,7 @@ On top of the normal Dragula events, when `[(dragulaModel)]` is provided, there 
 If you need to configure the `drake` _(there's exactly one `drake` per `group`)_, you can use the `DragulaService`.
 
 ```ts
-import { DragulaService } from 'ng2-dragula';
+import { DragulaService } from '@xmagic/ngx-dragula';
 
 class ConfigExample {
   constructor(private dragulaService: DragulaService) {
@@ -277,7 +278,7 @@ Refer to the documentation for
 [dragula](https://github.com/bevacqua/dragula#readme) to learn more about the
 native options.
 
-All of the native options work with ng2-dragula. However, there is one addition:
+All of the native options work with @xmagic/ngx-dragula. However, there is one addition:
 
 #### `copyItem: <T>(item: T) => T`
 
@@ -286,8 +287,8 @@ When you have:
 * `[(dragulaModel)]`
 * `copy` is `true` or a *function that returns true*
 
-... ng2-dragula will have to create a clone of the JS object you picked up. In
-previous versions of `ng2-dragula`, there was a terribly buggy,
+... @xmagic/ngx-dragula will have to create a clone of the JS object you picked up. In
+previous versions of `@xmagic/ngx-dragula`, there was a terribly buggy,
 one-size-fits-all clone function. From v2 onwards, you **MUST** provide your own
 `copyItem` function.
 
@@ -320,7 +321,7 @@ Native dragula:
   Use: drake.on('drag', listener)
   Listener arguments: (el, source)
 
-ng2-dragula:
+@xmagic/ngx-dragula:
   Method: DragulaService.drag(groupName?: string): Observable<...>
   Observable of: { name: string; el: Element; source: Element; }
 ```
@@ -338,7 +339,7 @@ the event, and unsubscribe when your component is destroyed.
 
 ```ts
 import { Subscription } from 'rxjs';
-import { DragulaService } from 'ng2-dragula';
+import { DragulaService } from '@xmagic/ngx-dragula';
 
 export class MyComponent {
   // RxJS Subscription is an excellent API for managing many unsubscribe calls.
@@ -404,7 +405,7 @@ isDragging$ = merge(dragStart$, dragEnd$).pipe(startWith(false));
 // html: [class.dragging]="isDragging$ | async"
 ```
 
-## Special Events for `ng2-dragula`
+## Special Events for `@xmagic/ngx-dragula`
 
 The `dropModel(name?: string)` and `removeModel(name?: string)` events are only active when you have supplied `[dragulaModel]`.
 
@@ -466,14 +467,10 @@ There are hundreds of other libraries that do this. Some notable ones:
 
 # Development
 
-- You must use Yarn >= 1.3. It includes the 'workspaces' feature.
-- Please use [Conventional Commits](https://conventionalcommits.org/) in your commit messages.
-
 #### setup
 
 ```sh
-yarn
-yarn workspace ng2-dragula build
+npm run build
 ```
 
 #### run tests
@@ -490,7 +487,7 @@ yarn workspace ng2-dragula test:headless
 # listens for changes in the library and rebuilds on save
 yarn watch
 # runs demo server
-yarn workspace demo start
+npm start
 ```
 
 #### Publishing a new version

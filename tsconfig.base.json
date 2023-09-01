@@ -23,7 +23,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "ng2-dragula": [
+      "@xmagic/ngx-dragula": [
         "libs/ng2-dragula/src/public_api.ts"
       ]
     }

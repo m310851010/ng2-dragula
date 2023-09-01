@@ -1,3 +1,5 @@
+> Forked from ng2-dragula 16.x branch, it supports Angular 13.
+
 Official **Angular** wrapper for [`dragula`](https://github.com/bevacqua/dragula).
 
 [![npm version](https://badge.fury.io/js/ng2-dragula.svg)](http://badge.fury.io/js/ng2-dragula) [![npm downloads](https://img.shields.io/npm/dm/ng2-dragula.svg)](https://npmjs.org/ng2-dragula)
